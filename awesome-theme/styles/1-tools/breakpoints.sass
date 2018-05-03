@@ -1,0 +1,101 @@
+// DEVICE WIDTHS
+$small-device-width: 576px
+$medium-device-width: 768px
+$large-device-width: 992px
+$extra-large-device-width: 1200px
+
+// EXTRA SMALL DEVICES (portrait phones, less than 576px)
+
+// No "breakpoint-up-xs" (min-width)
+
+// <----- Width -----> 575px
+=breakpoint-only-xs
+  @media (max-width: $small-device-width - 1)
+    @content
+
+// <----- Width -----> 575px
+=breakpoint-down-xs
+  @media (max-width: $small-device-width - 1)
+    @content
+
+// SMALL DEVICES (landscape phones, 576px and up)
+
+// 576px <----- Width ----->
+=breakpoint-up-sm
+  @media (min-width: $small-device-width)
+    @content
+
+// 576px <----- Width -----> 767px
+=breakpoint-only-sm
+  @media (min-width: $small-device-width) and (max-width: $medium-device-width - 1)
+    @content
+
+// <----- Width -----> 767px
+=breakpoint-down-sm
+  @media (max-width: $medium-device-width - 1)
+    @content
+
+// MEDIUM DEVICES (tablets, 768px and up)
+
+// 768px <----- Width ----->
+=breakpoint-up-md
+  @media (min-width: $medium-device-width)
+    @content
+
+// 768px <----- Width -----> 991px
+=breakpoint-only-md
+  @media (min-width: $medium-device-width) and (max-width: $large-device-width - 1)
+    @content
+
+// <----- Width -----> 991px
+=breakpoint-down-md
+  @media (max-width: $large-device-width - 1)
+    @content
+
+// LARGE DEVICES (desktops, 992px and up)
+
+// 992px <----- Width ----->
+=breakpoint-up-lg
+  @media (min-width: $large-device-width)
+    @content
+
+// 992px <----- Width -----> 1199px
+=breakpoint-only-lg
+  @media (min-width: $large-device-width) and (max-width: $extra-large-device-width - 1)
+    @content
+
+// <----- Width -----> 1199px
+=breakpoint-down-lg
+  @media (max-width: $extra-large-device-width - 1)
+    @content
+
+// EXTRA LARGE DEVICES (large desktops, 1200px and up)
+
+// 1200px <----- Width ----->
+=breakpoint-up-xl
+  @media (min-width: $extra-large-device-width)
+    @content
+
+// 1200px <----- Width ----->
+=breakpoint-only-xl
+  @media (min-width: $extra-large-device-width)
+    @content
+
+// No "breakpoint-down-xl" (max-width)
+
+// CUSTOM BREAKPOINTS
+
+// Custom Min-Width <----- Width ----->
+=breakpoint-up($custom-min-width)
+  @media (min-width: $custom-min-width)
+    @content
+
+// Custom Min-Width <----- Width -----> Custom Max-Width
+=breakpoint-only($custom-min-width, $custom-max-width)
+  @media (min-width: $custom-min-width) and (max-width: $custom-max-width)
+    @content
+
+// <----- Width -----> Custom Max-Width
+=breakpoint-down($custom-max-width)
+  @media (max-width: $custom-max-width)
+    @content
